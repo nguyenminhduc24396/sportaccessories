@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 200,
                 'count' => 0,
                 'description' => 'Màu đỏ',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -36,7 +36,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 200,
                 'count' => 0,
                 'description' => 'Màu đen',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -49,7 +49,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 100,
                 'count' => 0,
                 'description' => 'Màu xanh',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -62,7 +62,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 150,
                 'count' => 0,
                 'description' => 'Màu trắng',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -75,7 +75,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 250,
                 'count' => 0,
                 'description' => 'Màu vàng',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -88,7 +88,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 250,
                 'count' => 0,
                 'description' => 'Màu trắng',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -101,7 +101,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 100,
                 'count' => 0,
                 'description' => 'Màu ghi',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -114,7 +114,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 250,
                 'count' => 0,
                 'description' => 'Màu xanh',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -127,7 +127,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 250,
                 'count' => 0,
                 'description' => 'Màu vàng',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -140,7 +140,7 @@ class ProductsTableSeeder extends Seeder
                 'qty' => 250,
                 'count' => 0,
                 'description' => 'Màu ghi',
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
         ]);

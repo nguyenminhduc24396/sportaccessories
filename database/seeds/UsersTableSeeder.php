@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
                 'address' => 'Hà Nội',
                 'role' => -1,
                 'status' => 1,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                 'address' => 'Hà Nội',
                 'role' => 0,
                 'status' => 1,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -46,7 +46,7 @@ class UsersTableSeeder extends Seeder
                 'address' => 'Hải Phòng',
                 'role' => 1,
                 'status' => 1,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
                 'address' => 'TPHCM',
                 'role' => 1,
                 'status' => 1,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
         ]);

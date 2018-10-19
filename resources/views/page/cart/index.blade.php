@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
+                <li><a href="{{ route('home') }}">Trang chủ</a></li>
+                <li class="active">Giỏ hàng</li>
             </ul>
         </div>
     </div>
@@ -65,7 +65,8 @@
         </div>
     </div>
     <script type="text/javascript">
-        function updateCart(quantity, id){
+        function updateCart(quantity, id)
+        {
             $.get(
                 "{{ asset("updatecart") }}",
                 { quantity:quantity, id:id },
@@ -74,5 +75,5 @@
                 }
             );
         }
-</script>
+    </script>
 @endsection

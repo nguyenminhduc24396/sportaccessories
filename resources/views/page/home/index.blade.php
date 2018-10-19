@@ -35,26 +35,24 @@
                             <div class="banner7-content slider-2">
                             </div>
                         </div>
-                    </div><!-- /.flexslider -->
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3 col-left">
                     <div class="block">
-                            <!-- ĐỂ GOOGLE MAP Ở ĐÂY -->
-                        <div class="owl" style="margin-top: 5px;">
+                        <div class="owl">
                             <div class="title-group"><h2>Bản đồ</h2></div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d931.1124732925513!2d105.8571619!3d21.0146773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abf3cfd6e17b%3A0xb07803945e3732fe!2zTmd1eeG7hW4gVHJ1bmcgTmfhuqFuLCBQaOG6oW0gxJDDrG5oIEjhu5MsIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1534069022237" width="270" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="block">
-                            <!-- ĐỂ Fanpage Ở ĐÂY -->
-                        <div class="owl" style="margin-top: 5px;">
+                        <div class="owl">
                             <div class="title-group"><h2>Fanpage</h2></div>
                             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthatshoweplay&tabs=timeline&width=270&height=750&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="270" height="750" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                         </div>
                     </div>
-                </div><!-- /.col-left -->
+                </div>
                 <div class="col-sm-9 col-right">
                     <div class="featuredproductslider-container"> 
                         <div class="title-group1"><h2>Sản phẩm mới</h2></div>
@@ -67,7 +65,7 @@
                                             <div class="product_icon">
                                                 <div class='new-icon'><span>new</span></div>
                                             </div>
-                                            <a href="#" title="Nunc facilisis" class="product-image">
+                                            <a href="{{ route('detail', ['id' => $val->id]) }}" class="product-image">
                                                 <img height="200" src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="Nunc facilisis"/>
                                             </a>
                                             <div class="box-hover">
@@ -114,7 +112,7 @@
                                                 <div class='new-icon'><span>new</span></div>
                                                 <div class="sale-icon"><span>sale</span></div>
                                             </div>
-                                            <a href="#" title="Nunc facilisis" class="product-image">
+                                            <a href="{{ route('detail', ['id' => $val->id]) }}" class="product-image">
                                                 <img height="200" src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="Nunc facilisis"/>
                                             </a>
                                             <div class="box-hover">
@@ -173,7 +171,7 @@
                                             </div>
                                         </div>
                                         <div class="des-container">
-                                            <h2 class="product-name"><a href="#" title="Nunc facilisis">{{ $val->namepd }}</a></h2>
+                                            <h2 class="product-name"><a href="#">{{ $val->namepd }}</a></h2>
                                             <div class="price-box">
                                                 <p class="special-price">
                                                     <span class="price-label">Special Price</span>
@@ -198,7 +196,7 @@
                                             <div class="product_icon">
                                                 <div class='new-icon'><span>new</span></div>
                                             </div>
-                                            <a href="#" title="Nunc facilisis" class="product-image">
+                                            <a href="{{ route('detail', ['id' => $val->id]) }}"class="product-image">
                                                 <img height="200" src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="Nunc facilisis"/>
                                             </a>
                                             <div class="box-hover">
@@ -209,7 +207,7 @@
                                             </div>
                                         </div>
                                         <div class="des-container">
-                                            <h2 class="product-name"><a href="#" title="Nunc facilisis">{{ $val->namepd }}</a></h2>
+                                            <h2 class="product-name"><a href="#">{{ $val->namepd }}</a></h2>
                                             <div class="price-box">
                                                 <p class="special-price">
                                                     <span class="price-label">Special Price</span>

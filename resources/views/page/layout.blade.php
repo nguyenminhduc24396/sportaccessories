@@ -20,17 +20,6 @@
     <link href="{{ asset('css/page/style-boxed.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/responsive.css') }}" rel="stylesheet">
     <script src="{{ asset('js/page/jquery-1.11.3.min.js') }}"></script>
-    <script src="{{ asset('js/page/jquery.min.js') }}"></script>
-    <script type="text/javascript">
-        $(function()
-        {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="header">
@@ -172,10 +161,10 @@
                         <div class="col-md-9">
                             <ul class="menu clearfix visible-lg visible-md">
                                 <li class="active"><a href="#">Trang chủ</a></li>
-                                <li><a href="#">Bài viết</a></li>
-                                <li><a href="#">Liên hệ</a></li>
-                                <li><a href="#">Về chúng tôi</a></li>
-                                <li><a href="#">Câu hỏi thường gặp</a></li>
+                                <li><a href="{{ route('post') }}">Bài viết</a></li>
+                                <li><a href="{{ route('contact') }}">Liên hệ</a></li>
+                                <li><a href="{{ route('about') }}">Về chúng tôi</a></li>
+                                <li><a href="{{ route('question') }}">Câu hỏi thường gặp</a></li>
                             </ul>
                         </div>
                     </div>
@@ -282,8 +271,7 @@
                     </div>
                 </div>
             </div>
-        </div><!-- /.footer -->
-        <!-- Jquery Js -->
+        </div>
         <script src="{{ asset('js/page/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/page/jquery.nivo.slider.pack.js') }}"></script>
         <script src="{{ asset('js/page/owl.carousel.min.js') }}"></script>

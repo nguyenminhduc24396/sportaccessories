@@ -82,7 +82,7 @@ class UserController extends Controller
         if ($id <= 0) {
             echo "ERR";
         } else {
-            if (DB::table('users')->where('id', $id)->delete()) {
+            if (User::where('id', $id)->delete()) {
                 echo "OK";
             } else {
                 echo "FAIL";

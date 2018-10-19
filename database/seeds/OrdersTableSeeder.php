@@ -25,7 +25,7 @@ class OrdersTableSeeder extends Seeder
                 'note' => null,
                 'total_price' => 135000,
                 'ship_date' => null,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -40,7 +40,7 @@ class OrdersTableSeeder extends Seeder
                 'note' => 'gọi trước khi giao hàng',
                 'total_price' => 215000,
                 'ship_date' => null,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
             [
@@ -55,7 +55,7 @@ class OrdersTableSeeder extends Seeder
                 'note' => null,
                 'total_price' => 295000,
                 'ship_date' => null,
-                'created_at' => date('Y-m-d H-i-s'),
+                'created_at' => null,
                 'updated_at' => null,
             ],
         ]);

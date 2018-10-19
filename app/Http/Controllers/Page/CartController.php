@@ -47,6 +47,8 @@ class CartController extends Controller
     }
     public function update(Request $request)
     {
+        $pd = Product::find($request->id);
+        $qty = $pd->qty - $request->quantity;
         \Cart::update($request->id, array(
             'quantity' => array(
                 'relative' => false,
@@ -62,10 +64,11 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $data['info'] = Auth::user();
-        $data['cart'] = \Cart::getContent();
-        $data['shipping'] = Shipping::all();
-        $data['categories'] = Category::where('status', 1)->get();
-        return view('page.checkout.index', $data);
+            $data['cart'] = \Cart::getContent();
+            $data['shipping'] = Shipping::all();
+            $data['categories'] = Category::where('status', 1)->get();
+            
+            return view('page.checkout.index', $data);
         }
         return redirect('/login');
     }

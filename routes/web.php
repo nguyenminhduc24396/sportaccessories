@@ -15,9 +15,13 @@ Auth::routes(['verify' => true]);
 
 Route::group(['namespace' => 'Page'], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::get('about', 'HomeController@about')->name('about');
+    Route::get('question', 'HomeController@question')->name('question');
 
     Route::get('detail/{id}', 'ProductController@detail')->name('detail');
     Route::get('category/{id}', 'ProductController@categories')->name('categories');
+    Route::get('search', 'ProductController@search')->name('search');
 
     Route::get('cart', 'CartController@index')->name('cart');
     Route::get('addcart/{id}', 'CartController@add')->name('cart.add');
@@ -32,9 +36,12 @@ Route::group(['namespace' => 'Page'], function () {
     Route::get('order', 'OrderController@index')->name('order');
     Route::get('orderdetail/{id}', 'OrderController@detail')->name('order.detail');
     Route::post('removeorder', 'OrderController@remove')->name('order.remove');
+
+    Route::get('post', 'PostController@index')->name('post');
+    Route::get('post/{id}', 'PostController@content')->name('post.contenr');
 });
 
-Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => ['verified', 'checkLogin']], function () {
+Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'checkLogin'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::post('update', 'DashboardController@update')->name('update');
 

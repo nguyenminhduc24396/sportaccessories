@@ -8,6 +8,7 @@ use Darryldecode\Cart\CartCondition;
 use Illuminate\Support\Facades\DB;
 use App\Model\Category;
 use App\Model\Product;
+use App\Model\Contact;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,21 @@ class HomeController extends Controller
         $data['best'] = Product::orderBy('count', 'DESC')->where('status', 1)->where('count', '>', 0)->limit(8)->get();
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
+
         return view('page.home.index', $data);
+    }
+    public function contact()
+    {
+        $data['cart'] = \Cart::getContent();
+        $data['categories'] = Category::where('status', 1)->get();
+
+        return view('page.home.contact', $data);
+    }
+    public function question()
+    {
+        $data['cart'] = \Cart::getContent();
+        $data['categories'] = Category::where('status', 1)->get();
+        
+        return view('page.home.question', $data);
     }
 }

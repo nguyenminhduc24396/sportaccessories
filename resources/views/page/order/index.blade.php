@@ -1,7 +1,7 @@
 @extends('page.layout')
 
 @section('content')
-<div class="breadcrumbs">
+    <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="{{ route('home') }}">Trang chủ</a></li>

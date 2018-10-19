@@ -1,0 +1,148 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class ProductsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('products')->insert([
+            [
+                'namepd' => 'Balo bóng đá',
+                'category_id' => 1,
+                'image' => '1.jpg',
+                'price' => 200000,
+                'sale' => 100000,
+                'status' => 1,
+                'qty' => 200,
+                'count' => 0,
+                'description' => 'Màu đỏ',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Balo bóng rổ',
+                'category_id' => 2,
+                'image' => '2.jpg',
+                'price' => 120000,
+                'sale' => 60000,
+                'status' => 1,
+                'qty' => 200,
+                'count' => 0,
+                'description' => 'Màu đen',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Balo cầu lông',
+                'category_id' => 3,
+                'image' => '3.png',
+                'price' => 180000,
+                'sale' => 90000,
+                'status' => 1,
+                'qty' => 100,
+                'count' => 0,
+                'description' => 'Màu xanh',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Balo bơi lội',
+                'category_id' => 4,
+                'image' => '4.jpg',
+                'price' => 50000,
+                'sale' => 25000,
+                'status' => 1,
+                'qty' => 150,
+                'count' => 0,
+                'description' => 'Màu trắng',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Balo tập Gym',
+                'category_id' => 5,
+                'image' => '5.jpg',
+                'price' => 100000,
+                'sale' => 50000,
+                'status' => 1,
+                'qty' => 250,
+                'count' => 0,
+                'description' => 'Màu vàng',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Bó gối',
+                'category_id' => 1,
+                'image' => '6.jpg',
+                'price' => 150000,
+                'sale' => null,
+                'status' => 1,
+                'qty' => 250,
+                'count' => 0,
+                'description' => 'Màu trắng',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Băng đô đầu',
+                'category_id' => 2,
+                'image' => '7.jpg',
+                'price' => 30000,
+                'sale' => null,
+                'status' => 1,
+                'qty' => 100,
+                'count' => 0,
+                'description' => 'Màu ghi',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Băng cổ tay',
+                'category_id' => 3,
+                'image' => '8.png',
+                'price' => 30000,
+                'sale' => null,
+                'status' => 1,
+                'qty' => 250,
+                'count' => 0,
+                'description' => 'Màu xanh',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Mũ bơi',
+                'category_id' => 4,
+                'image' => '1.jpg',
+                'price' => 100000,
+                'sale' => null,
+                'status' => 1,
+                'qty' => 250,
+                'count' => 0,
+                'description' => 'Màu vàng',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+            [
+                'namepd' => 'Áo ba lỗ',
+                'category_id' => 5,
+                'image' => '2.jpg',
+                'price' => 100000,
+                'sale' => null,
+                'status' => 1,
+                'qty' => 250,
+                'count' => 0,
+                'description' => 'Màu ghi',
+                'created_at' => date('Y-m-d H-i-s'),
+                'updated_at' => null,
+            ],
+        ]);
+    }
+}

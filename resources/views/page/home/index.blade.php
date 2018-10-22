@@ -160,7 +160,7 @@
                                                 <div class='new-icon'><span>new</span></div>
                                                 <div class="sale-icon"><span>sale</span></div>
                                             </div>
-                                            <a href="#" title="Nunc facilisis" class="product-image">
+                                            <a href="{{ route('detail', ['id' => $val->id]) }}" class="product-image">
                                                 <img height="200" src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="Nunc facilisis"/>
                                             </a>
                                             <div class="box-hover">

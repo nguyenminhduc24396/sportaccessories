@@ -73,9 +73,16 @@
     <span>Bài viết</span></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="{{ route('admin.order') }}">
-    <i class="fas fa-fw fa-sliders-h"></i>
-    <span>Slider</span></a>
+    <a class="nav-link" href="{{ route('admin.contact') }}">
+        <i class="fas fa-fw fa-phone-volume"></i>
+        <span>Liên hệ</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('admin.contact') }}">
+        <i class="fas fa-fw fa-sliders-h"></i>
+        <span>Slider</span>
+    </a>
 </li>
 </ul>
 <div id="content-wrapper">

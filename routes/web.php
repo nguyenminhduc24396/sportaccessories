@@ -16,6 +16,7 @@ Auth::routes(['verify' => true]);
 Route::group(['namespace' => 'Page'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::post('handlecontact', 'HomeController@handleContact')->name('handlecontact');
     Route::get('about', 'HomeController@about')->name('about');
     Route::get('question', 'HomeController@question')->name('question');
 
@@ -35,7 +36,7 @@ Route::group(['namespace' => 'Page'], function () {
 
     Route::get('order', 'OrderController@index')->name('order');
     Route::get('orderdetail/{id}', 'OrderController@detail')->name('order.detail');
-    Route::post('removeorder', 'OrderController@remove')->name('order.remove');
+    Route::get('removeorder/{id}', 'OrderController@remove')->name('order.remove');
 
     Route::get('post', 'PostController@index')->name('post');
     Route::get('post/{id}', 'PostController@content')->name('post.contenr');
@@ -44,6 +45,8 @@ Route::group(['namespace' => 'Page'], function () {
 Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'checkLogin'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::post('update', 'DashboardController@update')->name('update');
+    Route::get('contact', 'DashboardController@contact')->name('contact');
+    Route::post('reply', 'DashboardController@reply')->name('contact.reply');
 
     Route::get('category', 'CategoryController@index')->name('category');
     Route::post('addcategory', 'CategoryController@add')->name('category.add');

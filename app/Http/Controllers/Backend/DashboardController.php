@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Model\Contact;
 use App\Http\Requests\UpdateUserPost;
 
 class DashboardController extends Controller
@@ -31,6 +32,28 @@ class DashboardController extends Controller
             return redirect()->route('admin.dashboard');
         } else {
             return redirect()->route('admin.dashboard.edit', ['state'=>'err']);
+        }
+    }
+    public function contact(Request $request)
+    {
+        $keyword = $request->keyword;
+        $data['key'] = $keyword;
+        $data['contact'] = Contact::where('name', 'LIKE', "%{$keyword}%")->orWhere('email', 'LIKE', "%{$keyword}%")->paginate(10);
+
+        return view('admin.contact.index', $data);
+    }
+    public function reply(Request $request)
+    {
+        $id = $request->id;
+        $id = is_numeric($id) ? $id : 0;
+        if ($id <= 0) {
+            echo "ERR";
+        } else {
+            if (Contact::where('id', $id)->update(['updated_at' => date('Y-m-d H:i:s')])) {
+                echo "OK";
+            } else {
+                echo "FAIL";
+            }
         }
     }
 }

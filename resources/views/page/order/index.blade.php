@@ -38,7 +38,7 @@
                                 <td>{{ ($val->ship_date != null ) ? \Carbon\Carbon::parse($val->ship_date)->format('H:i:s d-m-Y') : '' }}</td>
                                 <td class="text-center">
                                     @if($val->order_status_id == 1)
-                                    <button onclick="deleteOd({{ $val->id }})"><span class="fa fa-trash-o"></span></button>
+                                    <a class="btn-remove" href="{{ route('order.remove',['id'=>$val->id]) }}"><span class="fa fa-trash-o"></span></a>
                                     @endif
                                 </td>
                             </tr>
@@ -49,24 +49,4 @@
             <div class="line2"></div>
         </div>
     </div>
-    <script type="text/javascript">
-    function deleteOd(id)
-    {
-        $.ajax(
-        {
-            url: "{{ route('order.remove') }}",
-            type: "POST",
-            data: {id: id},
-            success: function(res) {
-                res = $.trim(res);
-                if (res === 'OK') {
-                    alert('Hủy đơn hàng thành công');
-                    window.location.reload(true);
-                } else {
-                    alert('Có lỗi xảy ra');
-                }
-            }
-        });
-    }
-    </script>
 @endsection

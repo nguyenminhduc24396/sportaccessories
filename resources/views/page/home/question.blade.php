@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="checkout-step">
-                            <div class="checkout-step-item">
+                            {{-- <div class="checkout-step-item">
                                 <div class="step-title clearfix" data-toggle="collapse" data-target="#checkout-one">
                                     <span class="number">1</span>
                                     <h2>Checkout Method</h2>
@@ -71,19 +71,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
+                            @for($i=0;$i<5;$i++)
                             <div class="checkout-step-item">
-                                <div class="step-title clearfix collapsed" data-toggle="collapse" data-target="#checkout-two">
-                                    <span class="number">2</span>
+                                <div class="step-title clearfix collapsed" data-toggle="collapse" data-target="#{{ $i }}">
+                                    <span class="number">{{ $i }}</span>
                                     <h2>BILLING INFORMATION</h2>
                                 </div>
-                                <div id="checkout-two" class="collapse">
+                                <div id="{{ $i }}" class="collapse">
                                     <div class="step-content">
                                         Billing Information
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkout-step-item">
+                            @endfor
+                            {{-- <div class="checkout-step-item">
                                 <div class="step-title clearfix collapsed" data-toggle="collapse" data-target="#checkout-three">
                                     <span class="number">3</span>
                                     <h2>SHIPPING INFORMATION</h2>
@@ -126,7 +128,7 @@
                                         Order Review
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-sm-3">

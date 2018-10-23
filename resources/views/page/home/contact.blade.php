@@ -17,35 +17,35 @@
                         <h2>Liên hệ</h2>
                     </div>
                     <p class="text-muted">Vui lòng điền đầy đủ thông tin dưới đây</p>
-                    <form>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control" required="required">
+                    {!! Form::open(['route' => 'handlecontact']) !!}
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    {!! Form::label('email', 'E-Mail') !!}
+                                    {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'true']) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    {!! Form::label('name', 'Tên khách hàng') !!}
+                                    {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'true']) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    {!! Form::label('subject', 'Tiêu đề') !!}
+                                    {!! Form::text('subject', null, ['class' => 'form-control', 'required' => 'true']) !!}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {!! Form::label('message', 'Mô tả') !!}
+                                    {!! Form::textarea('message', null, ['class' => 'form-control', 'required' => 'true', 'rows' => 7]) !!}
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Tên khách hàng</label>
-                                <input type="text" class="form-control" required="required">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Tiêu đề</label>
-                                <input type="text" class="form-control" required="required">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label>Nội dung</label>
-                                <textarea class="form-control" rows="7" required="required"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-default btn-lg">Gửi</button>
-                    </form>
+                        {!! Form::submit('Gửi', ['class' => 'btn btn-default btn-lg']) !!}
+                    {!! Form::close() !!}
                     <br>
                 </div>
                 <div class="col-sm-3">

@@ -58,7 +58,7 @@ class CartController extends Controller
     }
     public function remove($id){
         \Cart::remove($id);
-        return redirect()->route('cart');
+        return redirect()->back();
     }
     public function checkout()
     {

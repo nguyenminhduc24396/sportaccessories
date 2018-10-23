@@ -32,14 +32,10 @@ class OrderController extends Controller
     {
         $id = $request->id;
         $id = is_numeric($id) ? $id : 0;
-        if ($id <= 0) {
-            echo "ERR";
+        if (Order::where('id', $id)->delete()) {
+            return redirect()->back();
         } else {
-            if (DB::table('orders')->where('id', $id)->delete()) {
-                echo "OK";
-            } else {
-                echo "FAIL";
-            }
+            echo redirect()->route('order',['state'=>'fail']);
         }
     }
     public function detail($id)

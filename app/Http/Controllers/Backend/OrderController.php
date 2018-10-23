@@ -96,7 +96,7 @@ class OrderController extends Controller
         if ($id <= 0) {
             echo "ERR";
         } else {
-            if (Order::where('id',$id)->update(['order_status_id' => 3,'ship_date'=>date('Y-m-d H:i:s')])) {
+            if (Order::where('id', $id)->update(['order_status_id' => 3, 'ship_date' => date('Y-m-d H:i:s')])) {
                 echo "OK";
             } else {
                 echo "FAIL";

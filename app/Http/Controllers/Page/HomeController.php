@@ -30,6 +30,17 @@ class HomeController extends Controller
 
         return view('page.home.contact', $data);
     }
+    public function handleContact(Request $request)
+    {
+        $data = $request->except('_token');
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $result = Contact::insert($data);
+        if ($result) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('contact', ['state'=>'err']);
+        }
+    }
     public function question()
     {
         $data['cart'] = \Cart::getContent();

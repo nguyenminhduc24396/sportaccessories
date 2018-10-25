@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if (session('errorMessage'))
+                <div class="alert alert-danger text-center">
+                    {{ session('errorMessage') }}
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">{{ __('Đăng nhập') }}</div>
                 <div class="card-body">

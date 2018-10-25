@@ -27,8 +27,8 @@
                     @endphp
                     <tr class="text-center">
                         <td>{{ $key+1 }}</td>
-                        <td>{{ $val->product->namepd }}</td>
-                        <td><img src="{{ URL::to('/').'/uploads/images/'.$val->product->image }}" alt="" width="120" height="120"></td>
+                        <td>{{ $val->namepd }}</td>
+                        <td><img src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="" width="120" height="120"></td>
                         <td>{{ $val->qty }}</td>
                         <td>{{ number_format($val->price) }}</td>
                         <td>{{ number_format($subTotal) }}</td>

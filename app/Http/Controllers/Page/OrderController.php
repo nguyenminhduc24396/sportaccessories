@@ -22,7 +22,7 @@ class OrderController extends Controller
     {
         $id = Auth::id();
         $id = is_numeric($id) ? $id : 0;
-        $data['listOd'] = Order::with(['shipping', 'payment_method', 'order_status'])->where('user_id', $id)->paginate(10);
+        $data['listOd'] = Order::orderBy('created_at', 'DESC')->with(['shipping', 'payment_method', 'order_status'])->where('user_id', $id)->paginate(10);
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
 
@@ -41,7 +41,7 @@ class OrderController extends Controller
     public function detail($id)
     {
         $id = is_numeric($id) ? $id : 0;
-        $data['infoOd'] = OrderDetail::with('product', 'order')->where('order_id', $id)->get();
+        $data['infoOd'] = OrderDetail::with('order')->where('order_id', $id)->get();
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
         

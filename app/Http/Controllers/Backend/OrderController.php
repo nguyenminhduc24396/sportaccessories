@@ -20,7 +20,7 @@ class OrderController extends Controller
     {
         $keyword = $request->keyword;
         $data['key'] = $keyword;
-        $data['listOd'] = Order::with(['shipping', 'payment_method', 'order_status'])->where('name','LIKE', "%{$keyword}%")->paginate(10);
+        $data['listOd'] = Order::orderBy('created_at', 'DESC')->with(['shipping', 'payment_method', 'order_status'])->where('name','LIKE', "%{$keyword}%")->paginate(10);
 
         return view('admin.order.index',$data);
     }
@@ -57,7 +57,7 @@ class OrderController extends Controller
     public function detail($id)
     {
         $id = is_numeric($id) ? $id : 0;
-        $data['infoOd'] = OrderDetail::with('product', 'order')->where('order_id', $id)->get();
+        $data['infoOd'] = OrderDetail::with('order')->where('order_id', $id)->get();
         
         return view('admin.order.detail', $data);
     }

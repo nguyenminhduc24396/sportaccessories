@@ -17,7 +17,8 @@ class CheckLogin
     public function handle($request, Closure $next)
     {
         if (Auth::user()->status == 0) {
-            return redirect()->route('login',['state' => 'error']);
+            Auth::logout();
+            return redirect()->back()->with('errorMessage', 'Tài khoản của bạn đã bị vô hiệu hóa');
         }
         if (Auth::check() && Auth::user()->role < 1) {
             return $next($request);

@@ -16,11 +16,11 @@ class CreateOrderDetailTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('order_detail', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('product_id')->unsigned();
             $table->integer('order_id')->unsigned();
+            $table->string('namepd');
+            $table->text('image');
             $table->float('price', 10, 2)->unsigned();
             $table->integer('qty')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }

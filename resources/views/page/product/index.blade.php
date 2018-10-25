@@ -48,8 +48,8 @@
                                 <div class="short-description">
                                     <div class="std">{{ $info->description }}</div>
                                 </div>
-                                <p class="availability in-stock">Tình trạng: <span>{{ ($info->status == 1) ? 'Còn hàng' : 'Tạm hết hàng' }}</span></p>
-                                @if ($info->status == 1)
+                                <p class="availability in-stock">Tình trạng: <span>{{ ($info->status == 1 && $info->qty > 0) ? 'Còn hàng' : 'Tạm hết hàng' }}</span></p>
+                                @if ($info->status == 1 && $info->qty > 0)
                                 <a href="{{ route('cart.add', ['id' => $info->id]) }}" class="btn btn-danger btn-cart">Thêm vào giỏ</a>
                                 @endif
                             </div>

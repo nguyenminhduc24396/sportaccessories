@@ -20,8 +20,10 @@ class CartController extends Controller
     {
         $data = [];
         $data['cart'] = \Cart::getContent();
+        $productIds = array_keys($data['cart']->toArray());
+        $data['productsQty'] = Product::whereIn('id', $productIds)->pluck('qty', 'id');
         $data['categories'] = Category::where('status', 1)->get();
-        return view('page.cart.index',$data);
+        return view('page.cart.index', $data);
     }
     public function add($id, Request $request){
         $id = is_numeric($id) ? $id : 0;
@@ -85,7 +87,8 @@ class CartController extends Controller
             $product = Product::find($val->id);
             $orderdetail = OrderDetail::insert([
                 'order_id' => $order->id,
-                'product_id' => $val->id,
+                'namepd' => $val->name,
+                'image' => $val->attributes['image'],
                 'price' => $val->price,
                 'qty' => $val->quantity,
             ]);

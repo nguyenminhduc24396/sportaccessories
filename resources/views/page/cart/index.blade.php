@@ -37,7 +37,7 @@
                                     </td>
                                     <td class="qty">
                                         <div class="input-group">
-                                            <input type="number" onchange="updateCart(this.value, '{{ $val->id }}')" class="form-control" value="{{ $val->quantity }}" min="1">
+                                            <input type="number" onchange="updateCart(this.value, '{{ $val->id }}')" class="form-control" value="{{ $val->quantity }}" min="1" max={{ $productsQty[$val->id] }}>
                                         </div>
                                     </td>
                                     <td class="subtotal" >{{ number_format($val->price) }}</td>

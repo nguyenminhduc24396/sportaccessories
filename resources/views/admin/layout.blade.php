@@ -79,6 +79,12 @@
     </a>
 </li>
 <li class="nav-item">
+    <a class="nav-link" href="{{ route('admin.question') }}">
+        <i class="fas fa-fw fa-question-circle"></i>
+        <span>Câu hỏi</span>
+    </a>
+</li>
+<li class="nav-item">
     <a class="nav-link" href="{{ route('admin.contact') }}">
         <i class="fas fa-fw fa-sliders-h"></i>
         <span>Slider</span>

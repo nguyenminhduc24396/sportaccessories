@@ -17,7 +17,7 @@ class ProductController extends Controller
         $data = [];
         $keyword = $request->keyword;
         $data['key'] = $keyword;
-        $data['listPd'] = Product::where('namepd', 'LIKE', "%{$keyword}%")->orWhere('price', 'LIKE', "%{$keyword}%")->paginate(5);
+        $data['listPd'] = Product::orderBy('created_at', 'DESC')->where('namepd', 'LIKE', "%{$keyword}%")->orWhere('price', 'LIKE', "%{$keyword}%")->paginate(5);
 
         return view('admin.product.index',$data);
     }

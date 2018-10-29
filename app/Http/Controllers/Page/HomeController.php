@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Model\Category;
 use App\Model\Product;
 use App\Model\Contact;
+use App\Model\Question;
 
 class HomeController extends Controller
 {
@@ -43,6 +44,7 @@ class HomeController extends Controller
     }
     public function question()
     {
+        $data['listQ'] = Question::all();
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
         

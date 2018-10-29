@@ -4,11 +4,17 @@
     <div class="col-lg-12">
         <h3 class="text-center">Sản phẩm</h3>
     </div>
-    <div class="col-lg-6">
-        <input type="text" id="keyword" value="{{ $key }}">
-        <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-lg-6">
+                <input type="text" class="form-control" id="keyword" value="{{ $key }}" placeholder="Tìm kiếm sản phẩm">
+            </div>
+            <div class="col-lg-3">
+                <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-3">
         <a href="{{ route('admin.product.add') }}" title="Add Product" class="btn btn-primary float-right">Thêm sản phẩm</a>
     </div>
     <div class="col-lg-12 mt-3">

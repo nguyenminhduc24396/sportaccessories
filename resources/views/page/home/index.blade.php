@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                         <div class="des-container">
-                                            <h2 class="product-name"><a href="#" title="Nunc facilisis">{{ $val->namepd }}</a></h2>
+                                            <h2 class="product-name"><a href="{{ route('detail', ['id' => $val->id]) }}">{{ $val->namepd }}</a></h2>
                                             <div class="price-box">
                                                 <p class="special-price">
                                                     <span class="price-label">Special Price</span>
@@ -123,7 +123,7 @@
                                             </div>
                                         </div>
                                         <div class="des-container">
-                                            <h2 class="product-name"><a href="#" title="Nunc facilisis">{{ $val->namepd }}</a></h2>
+                                            <h2 class="product-name"><a href="{{ route('detail', ['id' => $val->id]) }}">{{ $val->namepd }}</a></h2>
                                             <div class="price-box">
                                                 <p class="special-price">
                                                     <span class="price-label">Special Price</span>
@@ -171,7 +171,7 @@
                                             </div>
                                         </div>
                                         <div class="des-container">
-                                            <h2 class="product-name"><a href="#">{{ $val->namepd }}</a></h2>
+                                            <h2 class="product-name"><a href="{{ route('detail', ['id' => $val->id]) }}">{{ $val->namepd }}</a></h2>
                                             <div class="price-box">
                                                 <p class="special-price">
                                                     <span class="price-label">Special Price</span>

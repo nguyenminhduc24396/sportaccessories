@@ -4,9 +4,15 @@
     <div class="col-lg-12">
         <h3 class="text-center">Đơn hàng</h3>
     </div>
-    <div class="col-lg-12">
-        <input type="text" id="keyword" value="{{ $key }}">
-        <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-lg-6">
+                <input type="text" id="keyword" value="{{ $key }}" class="form-control" placeholder="Nhập tên khách hàng">
+            </div>
+            <div class="col-lg-3">
+                <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+            </div>
+        </div>
     </div>
     <div class="col-lg-12 mt-3">
         <table class="table table-striped table-bordered table-sm">

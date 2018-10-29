@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Model\Contact;
+use App\Model\Question;
 use App\Http\Requests\UpdateUserPost;
 
 class DashboardController extends Controller
@@ -32,6 +33,33 @@ class DashboardController extends Controller
             return redirect()->route('admin.dashboard');
         } else {
             return redirect()->route('admin.dashboard.edit', ['state'=>'err']);
+        }
+    }
+    public function question()
+    {
+        $data['listQ'] = Question::all();
+        return view('admin.question.index', $data);
+    }
+    public function add(Request $request)
+    {
+        $data = $request->except('_token');
+        $result = Question::create($data);
+        return redirect()->route('admin.question');
+    }
+    public function updateQuestion(Request $request)
+    {}
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $id = is_numeric($id) ? $id : 0;
+        if ($id <= 0) {
+            echo "ERR";
+        } else {
+            if (Question::where('id', $id)->delete()) {
+                echo "OK";
+            } else {
+                echo "FAIL";
+            }
         }
     }
     public function contact(Request $request)

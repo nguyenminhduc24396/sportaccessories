@@ -45,6 +45,9 @@ Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::post('update', 'DashboardController@update')->name('update');
     Route::get('question', 'DashboardController@question')->name('question');
+    Route::post('addquestion', 'DashboardController@add')->name('question.add');
+    Route::post('deletequestion', 'DashboardController@delete')->name('question.delete');
+    Route::post('updatequestion/{id}', 'DashboardController@updateQuestion')->name('question.update');
     Route::get('contact', 'DashboardController@contact')->name('contact');
     Route::post('reply', 'DashboardController@reply')->name('contact.reply');
 
@@ -74,4 +77,11 @@ Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 
     Route::post('done', 'OrderController@done')->name('order.done');
     Route::get('editorder/{id}', 'OrderController@edit')->name('order.edit');
     Route::post('editorder/{id}', 'OrderController@handleedit')->name('order.handleedit');
+
+    Route::get('post', 'PostController@index')->name('post');
+    Route::get('addpost', 'PostController@add')->name('post.add');
+    Route::post('handleadd', 'PostController@handleadd')->name('post.handleadd');
+    Route::post('deletepost', 'PostController@delete')->name('post.delete');
+    Route::get('editpost/{id}', 'PostController@edit')->name('post.edit');
+    Route::post('editpost/{id}', 'PostController@handleedit')->name('post.handleedit');
 });

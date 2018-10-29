@@ -19,6 +19,7 @@
     <link href="{{ asset('css/page/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/style-boxed.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/page/mystyle.css') }}" rel="stylesheet">
     <script src="{{ asset('js/page/jquery-1.11.3.min.js') }}"></script>
 </head>
 <body>
@@ -265,13 +266,40 @@
                         <div class="col-sm-6">
                             <div class="copy">Copyright &copy; 2015 Plazathemes. All Rights Reserved</div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <div class="payment"><img src="{{ URL::to('/').'/images/payment.png' }}" alt="" class="img-responsive"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="fb-root"></div>
+        <div id="cfacebook">
+            <a href="javascript:;" class="chat_fb" onclick="return:false;"><i class="fa fa-facebook-square"></i> Sports Accessories Shop</a>
+            <div class="fchat">
+                <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/Sports-Accessories-Shop-2499964193564464/?modal=admin_todo_tour" data-width="300" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+            </div>
+        </div>
+
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) 
+                    return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+            (document, 'script', 'facebook-jssdk'));
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery(".chat_fb").click(function() {
+                jQuery('.fchat').toggle('slow');
+                });
+            });
+        </script>
         <script src="{{ asset('js/page/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/page/jquery.nivo.slider.pack.js') }}"></script>
         <script src="{{ asset('js/page/owl.carousel.min.js') }}"></script>
@@ -316,5 +344,5 @@
                 });
             });
         </script>
-</body>
+    </body>
 </html>

@@ -1,4 +1,5 @@
 @extends('admin.layout')
+
 @section('content')
     <div class="col-lg-12">
         <h3 class="text-center">Thông tin cá nhân</h3>

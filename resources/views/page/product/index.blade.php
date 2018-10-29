@@ -54,6 +54,14 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="product-tab tab-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#product-review" data-toggle="tab">Phản hồi của khách hàng</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="product-review">...</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-3 col-left">

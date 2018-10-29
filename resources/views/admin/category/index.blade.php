@@ -1,4 +1,5 @@
 @extends('admin.layout')
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -19,15 +20,23 @@
         </div>
     </div>
 <div class="row">
-    <div class="col-md-8">
-        <input type="text" id="keyword" value="{{ $key }}">
-        <button type="button" class="btn btn-primary" id="search" onclick="searchData();">Tìm kiếm</button>
-    </div>
-    <div class="col-md-4">
-        {!! Form::open(['route' => 'admin.category.add']) !!}
-            {!! Form::text('name_cat', null, ['placeholder' => 'Nhập tên danh mục']) !!}
-            {!! Form::submit('Thêm danh mục', ['class' => 'btn btn-primary']) !!}
-        {!! Form::close() !!}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" class="form-control" id="keyword" value="{{ $key }}" placeholder="Tìm kiếm danh mục">
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-primary" id="search" onclick="searchData();">Tìm kiếm</button>
+            </div>
+            <div class="col-md-4">
+                {!! Form::open(['route' => 'admin.category.add']) !!}
+                {!! Form::text('name_cat', null, ['class' => 'form-control', 'placeholder' => 'Nhập tên danh mục']) !!}
+            </div>
+            <div class="col-md-2">
+                {!! Form::submit('Thêm danh mục', ['class' => 'btn btn-primary float-right']) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">

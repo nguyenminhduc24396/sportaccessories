@@ -1,19 +1,31 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-md-12">
         <h3 class="text-center">Tài khoản</h3>
     </div>
-    <div class="col-lg-6">
-        <select name="role" id="role" style="height: 31px">
-            <option value="-1">Tất cả</option>
-            <option value="0">Quản lý</option>
-            <option value="1">Người dùng</option>
-        </select>
-        <input type="text" id="keyword" value="{{ $key }}">
-        <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-2">
+                <select name="role" id="role" class="form-control">
+                    <option value="-1">Tất cả</option>
+                    <option value="0">Quản lý</option>
+                    <option value="1">Người dùng</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-7">
+                        <input type="text" id="keyword" value="{{ $key }}" class="form-control" placeholder="Nhập tên người dùng hoặc E-Mail">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" id="search" class="btn btn-primary" onclick="searchData();">Tìm kiếm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-md-2">
         @if (Auth::user()->role == -1)
         <a href="{{ route('admin.user.add') }}" title="Add Product" class="btn btn-primary float-right">Thêm tài khoản quản lý</a>
         @endif

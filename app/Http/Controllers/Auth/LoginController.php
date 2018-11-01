@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -53,7 +53,7 @@ class LoginController extends Controller
             'name' => $user->name,
             'email'    => $user->email,
             'provider' => $provider,
-            'provider_id' => $user->id
+            'provider_id' => $user->id,
         ]);
     }
     public function handleProviderCallback($provider)

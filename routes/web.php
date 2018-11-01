@@ -73,7 +73,7 @@ Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 
     Route::post('edituser/{id}', 'UserController@handleedit')->name('user.handleedit');
 
     Route::get('order', 'OrderController@index')->name('order');
-    Route::get('detail/{id}', 'OrderController@detail')->name('order.detail');
+    Route::get('orderdetail/{id}', 'OrderController@detail')->name('order.detail');
     Route::post('deleteorder', 'OrderController@delete')->name('order.delete');
     Route::post('ship', 'OrderController@ship')->name('order.ship');
     Route::post('done', 'OrderController@done')->name('order.done');

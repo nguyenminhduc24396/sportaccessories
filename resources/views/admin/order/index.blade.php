@@ -30,7 +30,7 @@
             <tbody>
                 @foreach($listOd as $key => $val)
                 <tr class="text-center">
-                    <td><a href="{{ route('admin.order.detail',['id'=>$val->id]) }}" style="color: blue;">{{ $key+1 }}</a></td>
+                    <td><a href="{{ route('admin.order.detail', ['id' => $val->id]) }}" style="color: blue;">{{ $key+1 }}</a></td>
                     <td>{{ $val->name }}</td>
                     <td>{{ $val->note }}</td>
                     <td>{{ $val->phone }}</td>
@@ -49,7 +49,7 @@
                         <button onclick="done({{ $val->id }})" class="btn btn-success btn-sm" type="button" title="Success" {{ ($val->order_status_id == 3) ? 'disabled': ''}}>Đã nhận hàng</button>
                     </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('admin.order.edit',['id'=>$val->id]) }}" title="Edit">Sửa</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.order.edit', ['id' => $val->id]) }}" title="Edit">Sửa</a>
                     </td>
                     <td>
                         <button onclick="deleteOd({{ $val->id }})" class="btn btn-danger btn-sm" type="button" title="Delete">Xóa</button>

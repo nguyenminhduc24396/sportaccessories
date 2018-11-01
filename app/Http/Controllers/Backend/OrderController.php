@@ -22,7 +22,7 @@ class OrderController extends Controller
         $data['key'] = $keyword;
         $data['listOd'] = Order::orderBy('created_at', 'DESC')->with(['shipping', 'payment_method', 'order_status'])->where('name','LIKE', "%{$keyword}%")->paginate(10);
 
-        return view('admin.order.index',$data);
+        return view('admin.order.index', $data);
     }
     public function edit($id, Request $request)
     {

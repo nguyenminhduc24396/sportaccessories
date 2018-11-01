@@ -73,7 +73,7 @@
                             </li>
                         </ul>
                     </div>
-                </div><!-- /.topbar -->
+                </div>
                 <div class="header-bottom">
                     <div class="row">
                         <div class="col-md-3">
@@ -203,7 +203,7 @@
                             </ul>
                         </div>
                     </div>
-                </div><!-- /.footer-top -->
+                </div>
                 <div class="footer-middle">
                     <div class="row">
                         <div class="col-sm-3">

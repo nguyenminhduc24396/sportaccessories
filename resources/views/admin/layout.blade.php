@@ -13,8 +13,6 @@
     <link href="{{ asset('css/admin/vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin/sb-admin.css') }}" rel="stylesheet">
     <script src="{{ asset('js/admin/jquery.min.js') }}"></script>
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script> CKEDITOR.replace('editor1'); </script>
     <script type="text/javascript">
         $(function(){
             $.ajaxSetup({

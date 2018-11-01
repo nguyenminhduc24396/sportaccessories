@@ -12,6 +12,8 @@
 */
 
 Auth::routes(['verify' => true]);
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 Route::group(['namespace' => 'Page'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('contact', 'HomeController@contact')->name('contact');
@@ -31,7 +33,7 @@ Route::group(['namespace' => 'Page'], function () {
     Route::post('handlecheckout', 'CartController@handleCheckout')->name('handlecheckout');
 
     Route::get('post', 'PostController@index')->name('post');
-    Route::get('post/{id}', 'PostController@content')->name('post.content');
+    Route::get('post/{slug?}/{id}', 'PostController@detail')->name('post.detail');
 
     Route::get('infomation', 'UserController@index')->name('info');
     Route::post('update', 'UserController@update')->name('info.update');
@@ -81,7 +83,9 @@ Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 
     Route::get('post', 'PostController@index')->name('post');
     Route::get('addpost', 'PostController@add')->name('post.add');
     Route::post('handleadd', 'PostController@handleadd')->name('post.handleadd');
+    Route::get('detail/{id}', 'PostController@detail')->name('post.detail');
     Route::post('deletepost', 'PostController@delete')->name('post.delete');
+    Route::post('browse', 'PostController@browse')->name('post.browse');
     Route::get('editpost/{id}', 'PostController@edit')->name('post.edit');
     Route::post('editpost/{id}', 'PostController@handleedit')->name('post.handleedit');
 });

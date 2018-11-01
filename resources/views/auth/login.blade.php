@@ -47,6 +47,9 @@
                                     {{ __('Quên mật khẩu') }}
                                 </a>
                             </div>
+                            <div class="col-md-6 offset-md-4 mt-1">
+                                <a class="btn btn-danger" href="{{ url('/auth/google') }}"><i class="fa fa-google"></i> Đăng nhập bằng Google</a>
+                            </div>
                         </div>
                     </form>
                 </div>

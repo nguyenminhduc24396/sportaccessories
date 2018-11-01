@@ -49,8 +49,8 @@
                 <div class="form-group">
                     {!! Form::label('image', 'Ảnh') !!}
                     {!! Form::file('image', ['class' => 'form-control']) !!}
-                    <img src="{{ URL::to('/').'/uploads/images/'.$info->image }}" width="120" height="125">
                 </div>
+                <img src="{{ URL::to('/').'/uploads/images/'.$info->image }}" width="120" height="125">
                 <div class="form-group">
                     {!! Form::label('description', 'Mô tả') !!}
                     {!! Form::textarea('description', $info->description, ['class' => 'form-control', 'required' => 'true', 'rows' => 3]) !!}

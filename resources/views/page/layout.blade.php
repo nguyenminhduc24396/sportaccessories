@@ -67,8 +67,8 @@
                             <li class="dropdown">
                                 <a href="#" class="language dropdown-toggle" data-toggle="dropdown"><img src="{{ URL::to('/').'/images/flag-vn.png' }}" width="16px" height="11px" alt="">Tiếng Việt</a>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#"><img src="{{ URL::to('/').'/images/flag-vn.png' }}" width="16px" height="11px" alt=""> &nbsp;Tiếng Việt</a></li>
-                                    <li><a href="#"><img src="{{ URL::to('/').'/images/flag-us.png' }}" width="16px" height="11px" alt=""> &nbsp;English</a></li>
+                                    <li><a href="{{ route('language', ['lang' => 'vi']) }}"><img src="{{ URL::to('/').'/images/flag-vn.png' }}" width="16px" height="11px" alt=""> &nbsp;Tiếng Việt</a></li>
+                                    <li><a href="{{ route('language', ['lang' => 'en']) }}"><img src="{{ URL::to('/').'/images/flag-us.png' }}" width="16px" height="11px" alt=""> &nbsp;English</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -85,36 +85,37 @@
                                     <div class="col-sm-4">
                                         <div class="box-container time">
                                             <div class="box-inner">
-                                                <h4><b>Giờ mở cửa</b></h4>
-                                                <p>Thứ 2 - Chủ nhật: 8:00 - 22:00</p>
+                                                <h4><b>@lang('layout.worktime1')</b></h4>
+                                                <p>@lang('layout.worktime2')</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="box-container free-shipping">
                                             <div class="box-inner">
-                                                <h4><b>Giao hàng miễn phí</b></h4>
-                                                <p>Với hóa đơn trên 1.000.000 VNĐ</p>
+                                                <h4><b>@lang('layout.freeship1')</b></h4>
+                                                <p>@lang('layout.freeship2')</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="box-container money-back">
                                             <div class="box-inner">
-                                                <h4><b>Hoàn trả 100%</b></h4>
-                                                <p>Trong 30 ngày sau khi giao hàng</p>
+                                                <h4><b>@lang('layout.moneyback1')</b></h4>
+                                                <p>@lang('layout.moneyback2')</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <form class="form-search">
-                                <input type="text" class="input-text" name="q" id="search" style="width: 550px" placeholder="Tìm kiếm sản phẩm ...">
+                            <form class="form-search" action="{{ route('search') }}">
+                                @csrf
+                                <input type="text" class="input-text" name="q" id="search" style="width: 550px" placeholder="@lang('layout.search')">
                                 <button type="submit" class="btn btn-danger"><span class="fa fa-search"></span></button>
                             </form>
                             <div class="mini-cart">
                                 <div class="top-cart-title">
-                                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Giỏ hàng ({{ \Cart::getContent()->count() }})
+                                    <a href="" class="dropdown-toggle" data-toggle="dropdown">@lang('layout.cart') ({{ \Cart::getContent()->count() }})
                                         <span class="price">{{ number_format(\Cart::getSubTotal()) }}</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
@@ -126,15 +127,15 @@
                                                     <div class="media-body">
                                                         <a class="remove-cart-item" href="{{ route('cart.remove',['id'=>$val->id]) }}">&times;</a>
                                                         <h4>{{ $val->name }}</h4>
-                                                        <div class="mini-cart-qty">Số lượng: {{ $val->quantity }}</div>
+                                                        <div class="mini-cart-qty">@lang('layout.qty'): {{ $val->quantity }}</div>
                                                         <div class="mini-cart-price">{{ number_format($val->price) }} VNĐ</div>
                                                     </div>
                                                 </div>
                                             @endforeach
                                             @endif
-                                            <div class="mini-cart-subtotal">Tổng: <span class="price">{{ number_format(\Cart::getSubTotal()) }} VNĐ</span></div>
+                                            <div class="mini-cart-subtotal">@lang('layout.total'): <span class="price">{{ number_format(\Cart::getSubTotal()) }} VNĐ</span></div>
                                             <div class="checkout-btn">
-                                                <a href="{{ route('cart') }}" class="btn btn-default btn-md fwb">Xem giỏ hàng</a>
+                                                <a href="{{ route('cart') }}" class="btn btn-default btn-md fwb">@lang('layout.showcart')</a>
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +147,7 @@
                         <div class="col-md-3">
                             <div class="mega-container visible-lg visible-md">
                                 <div class="navleft-container">
-                                    <div class="mega-menu-title"><h3>Danh mục</h3></div>
+                                    <div class="mega-menu-title"><h3>@lang('layout.category')</h3></div>
                                     <div class="mega-menu-category" style="display: none;" id="menu-layout">
                                         <ul class="nav">
                                             @foreach($categories as $key => $val)
@@ -161,11 +162,11 @@
                         </div>
                         <div class="col-md-9">
                             <ul class="menu clearfix visible-lg visible-md">
-                                <li class="active"><a href="#">Trang chủ</a></li>
-                                <li><a href="{{ route('post') }}">Bài viết</a></li>
-                                <li><a href="{{ route('contact') }}">Liên hệ</a></li>
-                                <li><a href="{{ route('about') }}">Về chúng tôi</a></li>
-                                <li><a href="{{ route('question') }}">Câu hỏi thường gặp</a></li>
+                                <li class="active"><a href="#">@lang('layout.home')</a></li>
+                                <li><a href="{{ route('post') }}">@lang('layout.post')</a></li>
+                                <li><a href="{{ route('contact') }}">@lang('layout.contact')</a></li>
+                                <li><a href="{{ route('about') }}">@lang('layout.about')</a></li>
+                                <li><a href="{{ route('question') }}">@lang('layout.question')</a></li>
                             </ul>
                         </div>
                     </div>
@@ -180,8 +181,8 @@
                         <div class="col-md-5 col-sm-4 hidden-sm hidden-xs">
                             <div class="subscribe">
                                 <div class="subscribe-inner">
-                                    <h3>Đăng ký nhận thông báo</h3>
-                                    Luôn nhận được thông báo khi có sản phẩm mới
+                                    <h3>@lang('layout.noti')</h3>
+                                    @lang('layout.receive')
                                 </div>
                             </div>
                         </div>
@@ -208,7 +209,7 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="footer-title">
-                                <h2>Liên hệ với chúng tôi</h2>
+                                <h2>@lang('layout.contactus')</h2>
                             </div>
                             <div class="footer-content">
                                 <div class="email add">
@@ -220,42 +221,41 @@
                                 <div class="address add">Địa chỉ: 
                                     <p>16 Nguyễn Trung Ngạn - Hai Bà Trưng - Hà Nội</p>
                                 </div>
-                                <div class="contact-link"><a href="https://www.google.com/maps/place/Nguy%E1%BB%85n+Trung+Ng%E1%BA%A1n,+Ph%E1%BA%A1m+%C4%90%C3%ACnh+H%E1%BB%93,+Hai+B%C3%A0+Tr%C6%B0ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.014671,105.8570222,18.35z/data=!4m5!3m4!1s0x3135abf3cfd6e17b:0xb07803945e3732fe!8m2!3d21.014676!4d105.8577091" class="btn btn-default">Mở trong Google Maps</a></div>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="footer-title">
-                                <h2>Tài khoản của tôi</h2>
+                                <h2>@lang('layout.myaccount')</h2>
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="#">Chính sách bảo mật</a></li>
-                                    <li><a href="#">Thông tin tài khoản</a></li>
-                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">@lang('layout.policy')</a></li>
+                                    <li><a href="#">@lang('layout.youraccount')</a></li>
+                                    <li><a href="#">@lang('layout.contact')</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="footer-title">
-                                <h2>Thanh toán &amp; giao hàng</h2>
+                                <h2>@lang('layout.payment')</h2>
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="#">Điều khoản sử dụng</a></li>
-                                    <li><a href="#">Cách thức thanh toán</a></li>
-                                    <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                                    <li><a href="#">@lang('layout.policy')</a></li>
+                                    <li><a href="#">@lang('layout.method')</a></li>
+                                    <li><a href="#">@lang('layout.guide')</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="footer-title">
-                                <h2>Dịch vụ khách hàng</h2>
+                                <h2>@lang('layout.customer')</h2>
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="#">Chính sách vận chuyển</a></li>
-                                    <li><a href="#">Chính sách đổi trả</a></li>
-                                    <li><a href="#">Liên hệ với chúng tôi</a></li>
+                                    <li><a href="#">@lang('layout.shipping')</a></li>
+                                    <li><a href="#">@lang('layout.return')</a></li>
+                                    <li><a href="#">@lang('layout.contactus')</a></li>
                                 </ul>
                             </div>
                         </div>

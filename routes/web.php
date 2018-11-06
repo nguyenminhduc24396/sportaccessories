@@ -14,7 +14,7 @@
 Auth::routes(['verify' => true]);
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-Route::group(['namespace' => 'Page'], function () {
+Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('contact', 'HomeController@contact')->name('contact');
     Route::post('handlecontact', 'HomeController@handleContact')->name('handlecontact');
@@ -42,6 +42,16 @@ Route::group(['namespace' => 'Page'], function () {
     Route::get('removeorder/{id}', 'OrderController@remove')->name('order.remove');
     Route::get('order', 'OrderController@index')->name('order');
 });
+
+Route::get('switch-language/{lang}', function ($lang = null) {
+        $lang = ($lang == null) ? 'vi' : $lang;
+        App::setLocale($lang);
+        Session::put('locale',$lang);
+        LaravelLocalization::setLocale($lang);
+        $url = LaravelLocalization::getLocalizedURL(App::getLocale(),\URL::previous());
+
+        return Redirect::to($url);
+})->name('language');
 
 Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'checkLogin'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');

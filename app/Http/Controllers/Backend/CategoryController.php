@@ -15,7 +15,7 @@ class CategoryController extends Controller
     {
         $data = [];
         $keyword = $request->keyword;
-        $data['key'] = $keyword;
+        $data['key'] = ucfirst($keyword);
         $data['listCat'] = Category::where('name_cat', 'LIKE', "%{$keyword}%")->paginate(8);
         
         return view('admin.category.index', $data);

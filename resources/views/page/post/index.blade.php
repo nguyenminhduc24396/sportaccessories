@@ -20,11 +20,11 @@
                                 <div class="row">
                                     <div class="col-sm-5">
                                         <div class="images-container">
-                                            <a class="product-image" title="Fusce aliquam" href="#" rel="author"><img src="{{ URL::to('/').'/uploads/images/'.$val->thumbnail }}"></a>
+                                            <a class="product-image" href="{{ route('post.detail',['slug' => $val->slug, 'id' => $val->id]) }}" rel="author"><img src="{{ URL::to('/').'/uploads/images/'.$val->thumbnail }}"></a>
                                         </div>
                                     </div>
                                     <div class="col-sm-7">
-                                        <h2 class="product-name"><a title="" href="#">{{ $val->title }}</a></h2>
+                                        <h2 class="product-name"><a title="" href="{{ route('post.detail',['slug' => $val->slug, 'id' => $val->id]) }}">{{ $val->title }}</a></h2>
                                         <div class="ratings">
                                             <span class="amount"><a href="#">1 Review(s)</a></span>
                                             <span class="separator">|</span>
@@ -35,8 +35,7 @@
                                             <span class="separator">|</span>
                                             <span>{{ \Carbon\Carbon::parse($val->created_at)->format('H:i:s d-m-Y') }}</span>
                                         </div>
-                                        <div class="desc">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
-                                        </div>
+                                        <div class="desc">{!! $title[$key] !!} ...</div>
                                         <a href="{{ route('post.detail',['slug' => $val->slug, 
                                         'id' => $val->id]) }}" class="btn btn-default btn-readmore">Xem thêm</a>
                                     </div>

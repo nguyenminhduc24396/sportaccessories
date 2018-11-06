@@ -16,7 +16,7 @@ class UserController extends Controller
         $data = [];
         $keyword = $request->keyword;
         $role = $request->role;
-        $data['key'] = $keyword;
+        $data['key'] = ucfirst($keyword);
         $queryByName = [
             ['role', '<>', -1],
             ['name', 'LIKE', "%{$keyword}%"]

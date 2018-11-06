@@ -19,7 +19,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        $data['key'] = $keyword;
+        $data['key'] = ucfirst($keyword);
         $data['listOd'] = Order::orderBy('created_at', 'DESC')->with(['shipping', 'payment_method', 'order_status'])->where('name','LIKE', "%{$keyword}%")->paginate(10);
 
         return view('admin.order.index', $data);

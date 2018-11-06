@@ -50,4 +50,10 @@ class HomeController extends Controller
         
         return view('page.home.question', $data);
     }
+    public function about()
+    {
+        $data['categories'] = Category::where('status', 1)->get();
+        $data['cart'] = \Cart::getContent();
+        return view('page.home.about', $data);
+    }
 }

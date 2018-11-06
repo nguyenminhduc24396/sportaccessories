@@ -85,9 +85,9 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('admin.contact') }}">
-        <i class="fas fa-fw fa-sliders-h"></i>
-        <span>Slider</span>
+    <a class="nav-link" href="">
+        <i class="fas fa-fw fa-file-invoice-dollar"></i>
+        <span>Báo cáo</span>
     </a>
 </li>
 </ul>

@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
     ],
 
     /*
@@ -213,6 +214,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
     ],
 
 ];

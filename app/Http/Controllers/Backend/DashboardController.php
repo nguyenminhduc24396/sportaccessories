@@ -17,7 +17,7 @@ class DashboardController extends Controller
     {
         $data['info'] = Auth::user();
         
-        return view('admin.dashboard.index',$data);
+        return view('admin.dashboard.index', $data);
     }
     public function update(UpdateUserPost $request)
     {

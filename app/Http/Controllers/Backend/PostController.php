@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        $data['key'] = $keyword;
+        $data['key'] = ucfirst($keyword);
         $data['listPost'] = Post::orderBy('status', 'ASC')->with(['user'])->where('title', 'LIKE', "%{$keyword}%")->orWhere('slug', 'LIKE', "%{$keyword}%")->paginate(5);
         return view('admin.post.index', $data);
     }

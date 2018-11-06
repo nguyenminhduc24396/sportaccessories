@@ -238,7 +238,7 @@
     
         <div class="brands">
             <div class="title-group1">
-                <h2>Thương hiệu</h2>
+                <h2>@lang('layout.brand')</h2>
             </div>
             <div id="brands" class="owl-container">
                 <div class="owl">

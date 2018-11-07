@@ -218,7 +218,7 @@
                                 <div class="phone add">
                                     <p>082 776 8889</p>
                                 </div>
-                                <div class="address add">Địa chỉ: 
+                                <div class="address add">@lang('checkout.address1'): 
                                     <p>16 Nguyễn Trung Ngạn - Hai Bà Trưng - Hà Nội</p>
                                 </div>
                             </div>

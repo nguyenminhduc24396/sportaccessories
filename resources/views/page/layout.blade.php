@@ -191,7 +191,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="newsletter" name="email">
                                 </div>
-                                <button class="btn btn-danger" title="Subscribe" type="submit">Đăng ký</button>
+                                <button class="btn btn-danger" title="Subscribe" type="submit">@lang('layout.register')</button>
                             </form>
                         </div>
                         <div class="col-md-3 col-sm-4">

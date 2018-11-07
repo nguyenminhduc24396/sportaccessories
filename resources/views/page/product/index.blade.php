@@ -4,9 +4,9 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li>Danh mục</li>
-                <li class="active">Chi tiết sản phẩm</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li>@lang('layout.category')</li>
+                <li class="active">@lang('layout.product')</li>
             </ul>
         </div>
     </div>
@@ -45,9 +45,9 @@
                                 <div class="short-description">
                                     <div class="std">{{ $info->description }}</div>
                                 </div>
-                                <p class="availability in-stock">Tình trạng: <span>{{ ($info->status == 1 && $info->qty > 0) ? 'Còn hàng' : 'Tạm hết hàng' }}</span></p>
+                                <p class="availability in-stock">@lang('layout.status'): <span>@lang('layout.available')</span></p>
                                 @if ($info->status == 1 && $info->qty > 0)
-                                <a href="{{ route('cart.add', ['id' => $info->id]) }}" class="btn btn-danger btn-cart">Thêm vào giỏ</a>
+                                <a href="{{ route('cart.add', ['id' => $info->id]) }}" class="btn btn-danger btn-cart">@lang('layout.add')</a>
                                 @endif
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-sm-3 col-left">
                     <div class="block">
-                        <div class="title-group"><h2>Liên quan</h2></div>
+                        <div class="title-group"><h2>@lang('other')</h2></div>
                         <div id="special-offer" class="owl-container">
                             <div class="owl">
                                 <div class='sepecialoffer-item item'>

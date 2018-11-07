@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Về chúng tôi</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.about')</li>
             </ul>
         </div>
     </div>
@@ -18,14 +18,13 @@
                             <div class="item-inner">
                                 <div class="block">
                                     <div class="block-title">
-                                        <strong><span>Thông tin Shop</span></strong>
+                                        <strong><span>@lang('layout.shopinfo')</span></strong>
                                     </div>
-                                    <div class="desc">Sports Accessories Shop - Chuyên bán buôn, bán lẻ đồ tập, phụ kiện, quần áo thể thao nam nữ. Chúng tôi hân hạnh mang đến cho quý khách những sản phẩm chất lượng với giá cả phù hợp và dịch vụ uy tín. Tất cả các sản phẩm của Sports Accessories Shop đều được chúng tôi tuyển chọn một cách kỹ lưỡng sao cho phù hợp với phong cách Châu Á và bắt nhịp cùng xu hướng đồ tập thế giới. Đến với chúng tôi khách hàng có thể yên tâm mua hàng với nhiều mẫu mã được cập nhật thường xuyên và nhiều khuyến mại hấp dẫn.
-                                    </div>
+                                    <div class="desc">@lang('layout.des')</div>
                                 </div>
                                 <div class="block">
                                     <div class="block-title">
-                                        <strong><span>Thông tin liên hệ</span></strong>
+                                        <strong><span>@lang('layout.contactinfo')</span></strong>
                                     </div>
                                     <div class="block-content">
                                         <div class="email add">
@@ -34,13 +33,13 @@
                                         <div class="phone add">
                                             <p>082 776 8889</p>
                                         </div>
-                                        <div class="address add">Address: 
+                                        <div class="address add">@lang('checkout.address1'): 
                                             <p>16 Nguyễn Trung Ngạn - Hai Bà Trưng - Hà Nội</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="share-post">
-                                    <span class="share-label">Chia sẻ trang web này</span>
+                                    <span class="share-label">@lang('layout.share')</span>
                                     <ul>
                                         <li class="color-facebook"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
                                         <li class="color-twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>

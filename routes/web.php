@@ -44,7 +44,7 @@ Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(
 });
 
 Route::get('switch-language/{lang}', function ($lang = null) {
-        $lang = ($lang == null) ? 'vi' : $lang;
+        // $lang = ($lang == null) ? 'vi' : $lang;
         App::setLocale($lang);
         Session::put('locale',$lang);
         LaravelLocalization::setLocale($lang);

@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Câu hỏi thường gặp</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.question')</li>
             </ul>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="container">
             <div class="checkout">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-12">
                         <div class="checkout-step">
                             @foreach($listQ as $key => $val)
                             <div class="checkout-step-item">
@@ -28,19 +28,6 @@
                                 </div>
                             </div>
                             @endforeach
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="block block-layered-nav">
-                            <div class="block-content">
-                                <h2>Checkout progress</h2>
-                                <ol class="checkout-progress">
-                                    <li><span class="fa fa-play-circle-o"></span> Billing address</li>
-                                    <li><span class="fa fa-play-circle-o"></span> Shipping address</li>
-                                    <li><span class="fa fa-play-circle-o"></span> shipping method</li>
-                                    <li><span class="fa fa-play-circle-o"></span> payment methor</li>
-                                </ol>
-                            </div>
                         </div>
                     </div>
                 </div>

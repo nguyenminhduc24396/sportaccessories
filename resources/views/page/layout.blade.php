@@ -36,25 +36,25 @@
                         <ul class="topbar-nav clearfix">
                         @guest
                             <li>
-                                <a class="login" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                                <a class="login" href="{{ route('login') }}">@lang('layout.login')</a>
                             </li>
                             <li>
                                 @if (Route::has('register'))
-                                    <a class="register" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
+                                    <a class="register" href="{{ route('register') }}">@lang('layout.register')</a>
                                 @endif
                             </li>
                         @else
                             <li class="dropdown">
                                 <a id="navbarDropdown" class="account dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a title="My Account" href="{{ route('info') }}">Tài khoản</a></li>
-                                    <li><a title="My Cart" href="{{ route('cart') }}">Giỏ hàng</a></li>
-                                    <li><a title="Checkout" href="{{ route('order') }}">Lịch sử mua hàng</a></li>
+                                    <li><a title="My Account" href="{{ route('info') }}">@lang('layout.myaccount')</a></li>
+                                    <li><a title="My Cart" href="{{ route('cart') }}">@lang('layout.cart')</a></li>
+                                    <li><a title="Checkout" href="{{ route('order') }}">@lang('layout.order')</a></li>
                                     @if(Auth::user()->role < 1)
-                                    <li><a href="{{ route('admin.dashboard') }}">Bảng quản lý</a></li>
+                                    <li><a href="{{ route('admin.dashboard') }}">@lang('layout.dashboard')</a></li>
                                     @endif
                                     <li>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Đăng xuất') }}
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('layout.logout')
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf

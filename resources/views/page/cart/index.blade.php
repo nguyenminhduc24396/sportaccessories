@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Giỏ hàng</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.cart')</li>
             </ul>
         </div>
     </div>
@@ -17,12 +17,12 @@
                         <table class="table custom-table">
                             <thead>
                                 <tr class="first last">
-                                    <th>Xóa</th>
-                                    <th>Ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Giá</th>
-                                    <th>Tổng tiền</th>
+                                    <th>@lang('cart.delete')</th>
+                                    <th>@lang('cart.image')</th>
+                                    <th>@lang('cart.name')</th>
+                                    <th>@lang('cart.qty')</th>
+                                    <th>@lang('cart.price')</th>
+                                    <th>@lang('cart.sub')</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,16 +47,16 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5" class="text-center">Tổng giá đơn hàng</td>
+                                    <td colspan="5" class="text-center">@lang('cart.total')</td>
                                     <td class="grandtotal">{{ number_format(\Cart::getSubTotal()) }}</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                     <div class="text-right">
-                        <a href="{{ route('home') }}" class="btn btn-default btn-md">TIẾP TỤC MUA HÀNG</a>
+                        <a href="{{ route('home') }}" class="btn btn-default btn-md">@lang('cart.continue')</a>
                         @if(!\Cart::isEmpty())
-                        <a href="{{ route('checkout') }}" class="btn btn-danger btn-md">TIẾN HÀNH ĐẶT HÀNG</a>
+                        <a href="{{ route('checkout') }}" class="btn btn-danger btn-md">@lang('cart.proceed')</a>
                         @endif
                     </div>
                     <div class="line2"></div>

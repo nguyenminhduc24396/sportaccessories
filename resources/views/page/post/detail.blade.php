@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Bài viết</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.post')</li>
             </ul>
         </div>
     </div>
@@ -24,7 +24,7 @@
                                     <span class="comment-amount"><a href="#">4 comment</a></span>
                                 </div>
                                 <div class="blog-attr">
-                                    <span>Đăng bởi {{ $infoPost->user->name }}</span>
+                                    <span>@lang('layout.postby') {{ $infoPost->user->name }}</span>
                                     <span class="separator">|</span>
                                     <span>{{ \Carbon\Carbon::parse($infoPost->created_at)->format('H:i:s d-m-Y') }}</span>
                                 </div>
@@ -32,7 +32,7 @@
                                     {!! $infoPost->description !!}
                                 </div>
                                 <div class="share-post">
-                                    <span class="share-label">Chia sẻ bài viết này</span>
+                                    <span class="share-label">@lang('layout.sharepost')</span>
                                     <ul>
                                         <li class="color-facebook"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
                                         <li class="color-twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>

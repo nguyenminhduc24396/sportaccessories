@@ -42,7 +42,7 @@
                 <div class="col-sm-3 col-left">
                     <div class="block">
                         <div class="owl">
-                            <div class="title-group"><h2>Bản đồ</h2></div>
+                            <div class="title-group"><h2>@lang('layout.map')</h2></div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d931.1124732925513!2d105.8571619!3d21.0146773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abf3cfd6e17b%3A0xb07803945e3732fe!2zTmd1eeG7hW4gVHJ1bmcgTmfhuqFuLCBQaOG6oW0gxJDDrG5oIEjhu5MsIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1534069022237" width="270" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-sm-9 col-right">
                     <div class="featuredproductslider-container"> 
-                        <div class="title-group1"><h2>Sản phẩm mới</h2></div>
+                        <div class="title-group1"><h2>@lang('layout.new')</h2></div>
                         <div id="featured-products" class="owl-container">
                             <div class="owl">
                                 @foreach($new as $key => $val)
@@ -70,8 +70,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="newproductslider-container"> 
-                        <div class="title-group1"><h2>Đang giảm giá</h2></div>
+                        <div class="title-group1"><h2>@lang('layout.sale')</h2></div>
                         <div id="new-products" class="owl-container">
                             <div class="owl">
                                 @foreach($sale as $key => $val)
@@ -117,8 +117,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -148,7 +148,7 @@
                     	</div>
                     </div>
                     <div class="catlist"> 
-                        <div class="title-group1"><h2>Mua nhiều nhất</h2></div>
+                        <div class="title-group1"><h2>@lang('layout.best')</h2></div>
                         <div id="new-products" class="owl-container">
                             <div class="owl">
                                 @foreach($best as $key => $val)
@@ -165,8 +165,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -201,8 +201,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>

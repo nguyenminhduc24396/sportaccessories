@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Danh mục</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.category')</li>
             </ul>
         </div>
     </div>
@@ -18,7 +18,7 @@
                             <p class="block-subtitle">Shopping Options</p>
                             <div id="narrow-by-list">
                                 <div class="layered layered-Category">
-                                    <h2>Danh mục</h2>
+                                    <h2>@lang('layout.category')</h2>
                                     <div class="content-shopby">
                                         <ol>
                                             @foreach($categories as $key => $val)
@@ -34,19 +34,6 @@
                     </div>
                 </div>
                 <div class="col-sm-9 col-right">
-                    <div class="toolbar">
-                        <div class="pager">
-                            <div class="sort-by hidden-xs">
-                                <label>Sort By:</label>
-                                <select class="form-control input-sm">
-                                    <option selected="selected">Position</option>
-                                    <option>Name</option>
-                                    <option>Price</option>
-                                </select>
-                                <a title="Set Descending Direction" href="#"><span class="fa fa-sort-amount-desc"></span></a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row products">
                         @foreach($listPd as $key => $val)
                         <div class="col-md-3 col-sm-6">
@@ -62,8 +49,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -101,8 +88,8 @@
                                             </a>
                                             <div class="box-hover">
                                                 <ul class="add-to-links">
-                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">Xem chi tiết</a></li>
-                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">Thêm vào giỏ</a></li>
+                                                    <li><a href="{{ route('detail', ['id' => $val->id]) }}" class="link-quickview">@lang('layout.detail')</a></li>
+                                                    <li><a href="{{ route('cart.add', ['id' => $val->id]) }}" class="link-cart">@lang('layout.add')</a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Lịch sử mua hàng</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.order')</li>
             </ul>
         </div>
     </div>
@@ -13,17 +13,17 @@
         <div class="container">
                 <div class="table-responsive">
                     <table class="table custom-table">
-                        <h4 class="text-center">Lịch sử mua hàng</h4>
+                        <h4 class="text-center">@lang('layout.order')</h4>
                         <thead>
                             <tr class="text-center">
                                 <th>#</th>
-                                <th>Người nhận</th>
-                                <th>Địa chỉ nhận hàng</th>
-                                <th>Tổng tiền</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày tạo</th>
-                                <th>Ngày nhận</th>
-                                <th>Hủy</th>
+                                <th>@lang('checkout.name1')</th>
+                                <th>@lang('checkout.address1')</th>
+                                <th>@lang('checkout.total')</th>
+                                <th>@lang('layout.status')</th>
+                                <th>@lang('layout.create')</th>
+                                <th>@lang('layout.done')</th>
+                                <th>@lang('cart.delete')</th>
                             </tr>
                         </thead>
                         <tbody>

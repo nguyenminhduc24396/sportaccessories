@@ -1,11 +1,11 @@
 @extends('page.layout')
 
 @section('content')
-<div class="breadcrumbs">
+    <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active"><a href="{{ route('order') }}">Lịch sử mua hàng</a></li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active"><a href="{{ route('order') }}">@lang('layout.order')</a></li>
             </ul>
         </div>
     </div>
@@ -13,15 +13,15 @@
         <div class="container">
                 <div class="table-responsive">
                     <table class="table custom-table">
-                        <h4 class="text-center">Lịch sử mua hàng</h4>
+                        <h4 class="text-center">@lang('layout.order')</h4>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Ảnh</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Tổng tiền</th>
+                                <th>@lang('cart.name')</th>
+                                <th>@lang('cart.image')</th>
+                                <th>@lang('cart.price')</th>
+                                <th>@lang('cart.qty')</th>
+                                <th>@lang('cart.sub')</th>
                             </tr>
                         </thead>
                         @php 
@@ -45,7 +45,7 @@
                         </tbody>
                         <tfoot>
                             <tr class="text-center">
-                                <td colspan="5">Tổng giá đơn hàng</td>
+                                <td colspan="5">@lang('cart.total')</td>
                                 <td>{{ number_format($total) }}</td>
                             </tr>
                         </tfoot>

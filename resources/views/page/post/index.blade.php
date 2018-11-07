@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Bài viết</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.post')</li>
             </ul>
         </div>
     </div>
@@ -31,13 +31,13 @@
                                             <span class="comment-amount"><a href="#">4 comment</a></span>
                                         </div>
                                         <div class="blog-attr">
-                                            <span>Đăng bởi {{ $val->user->name }}</span>
+                                            <span>@lang('layout.postby') {{ $val->user->name }}</span>
                                             <span class="separator">|</span>
                                             <span>{{ \Carbon\Carbon::parse($val->created_at)->format('H:i:s d-m-Y') }}</span>
                                         </div>
                                         <div class="desc">{!! $title[$key] !!} ...</div>
                                         <a href="{{ route('post.detail',['slug' => $val->slug, 
-                                        'id' => $val->id]) }}" class="btn btn-default btn-readmore">Xem thêm</a>
+                                        'id' => $val->id]) }}" class="btn btn-default btn-readmore">@lang('layout.read')</a>
                                     </div>
                                 </div>
                             </div>

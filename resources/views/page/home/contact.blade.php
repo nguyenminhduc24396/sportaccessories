@@ -4,8 +4,8 @@
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="active">Liên hệ</li>
+                <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
+                <li class="active">@lang('layout.contact')</li>
             </ul>
         </div>
     </div>
@@ -14,9 +14,9 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class="page-title page-title-line">
-                        <h2>Liên hệ</h2>
+                        <h2>@lang('layout.contact')</h2>
                     </div>
-                    <p class="text-muted">Vui lòng điền đầy đủ thông tin dưới đây</p>
+                    <p class="text-muted">@lang('layout.enter')</p>
                     {!! Form::open(['route' => 'handlecontact']) !!}
                         <div class="row">
                             <div class="col-sm-4">
@@ -51,7 +51,7 @@
                 <div class="col-sm-3">
                     <div class="block">
                         <div class="block-title">
-                            <strong><span>Thông tin liên hệ</span></strong>
+                            <strong><span>@lang('layout.contactinfo')</span></strong>
                         </div>
                         <div class="block-content">
                             <div class="email add">
@@ -60,7 +60,7 @@
                             <div class="phone add">
                                 <p>082 776 8889</p>
                             </div>
-                            <div class="address add">Address: 
+                            <div class="address add">@lang('checkout.address1'): 
                                 <p>16 Nguyễn Trung Ngạn - Hai Bà Trưng - Hà Nội</p>
                             </div>
                         </div>

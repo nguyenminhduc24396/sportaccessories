@@ -66,12 +66,6 @@
                                                     <span class="price"></span>
                                                 </p>
                                             </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -104,12 +98,6 @@
                                                     <span class="price-label">Regular Price: </span>
                                                     <span class="price">{{ number_format($val->price) }} VNĐ</span>
                                                 </p>
-                                            </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
                                             </div>
                                         </div>
                                     </div>

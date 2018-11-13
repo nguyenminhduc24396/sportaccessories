@@ -29,8 +29,8 @@ Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(
     Route::get('addcart/{id}', 'CartController@add')->name('cart.add');
     Route::get('updatecart', 'CartController@update')->name('cart.update');
     Route::get('removecart/{id}', 'CartController@remove')->name('cart.remove');
-    Route::get('checkout','CartController@checkout')->name('checkout');
-    Route::post('handlecheckout', 'CartController@handleCheckout')->name('handlecheckout');
+    // Route::get('checkout','CartController@checkout')->name('checkout');
+    // Route::post('handlecheckout', 'CartController@handleCheckout')->name('handlecheckout');
 
     Route::get('post', 'PostController@index')->name('post');
     Route::get('post/{slug?}/{id}', 'PostController@detail')->name('post.detail');
@@ -42,7 +42,10 @@ Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(
     Route::get('removeorder/{id}', 'OrderController@remove')->name('order.remove');
     Route::get('order', 'OrderController@index')->name('order');
 });
-
+Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+    Route::get('checkout','CartController@checkout')->name('checkout');
+    Route::post('handlecheckout', 'CartController@handleCheckout')->name('handlecheckout');
+});
 Route::get('switch-language/{lang}', function ($lang = null) {
         // $lang = ($lang == null) ? 'vi' : $lang;
         App::setLocale($lang);
@@ -53,7 +56,7 @@ Route::get('switch-language/{lang}', function ($lang = null) {
         return Redirect::to($url);
 })->name('language');
 
-Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'checkLogin'], function () {
+Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => ['checkLogin', 'verified']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::post('update', 'DashboardController@update')->name('update');
     Route::get('question', 'DashboardController@question')->name('question');
@@ -98,4 +101,6 @@ Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 
     Route::post('browse', 'PostController@browse')->name('post.browse');
     Route::get('editpost/{id}', 'PostController@edit')->name('post.edit');
     Route::post('editpost/{id}', 'PostController@handleedit')->name('post.handleedit');
+
+    Route::get('report', 'ReportController@index')->name('report');
 });

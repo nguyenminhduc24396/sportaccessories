@@ -44,6 +44,7 @@ class DashboardController extends Controller
     {
         $data = $request->except('_token');
         $result = Question::create($data);
+        
         return redirect()->route('admin.question');
     }
     public function updateQuestion(Request $request)

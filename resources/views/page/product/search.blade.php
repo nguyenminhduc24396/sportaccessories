@@ -12,28 +12,7 @@
     <div class="main">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-left">
-                    <div class="block block-layered-nav">
-                        <div class="block-content">
-                            <p class="block-subtitle">Shopping Options</p>
-                            <div id="narrow-by-list">
-                                <div class="layered layered-Category">
-                                    <h2>@lang('layout.category')</h2>
-                                    <div class="content-shopby">
-                                        <ol>
-                                            @foreach($categories as $key => $val)
-                                            <li>
-                                                <a href="{{ route('categories',['id'=>$val->id]) }}">{{ $val->name_cat }}</a>
-                                            </li>
-                                            @endforeach
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-right">
+                <div class="col-sm-12 col-right">
                     <div class="row products">
                         @foreach($listPd as $key => $val)
                         <div class="col-md-3 col-sm-6">
@@ -65,12 +44,6 @@
                                                     <span class="price-label">Regular Price: </span>
                                                     <span class="price"></span>
                                                 </p>
-                                            </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -104,12 +77,6 @@
                                                     <span class="price-label">Regular Price: </span>
                                                     <span class="price">{{ number_format($val->price) }} VNĐ</span>
                                                 </p>
-                                            </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
                                             </div>
                                         </div>
                                     </div>

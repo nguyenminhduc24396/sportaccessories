@@ -8,6 +8,6 @@
         'total' => 'Tổng giá đơn hàng',
         'sub' => 'Tổng tiền',
         'continue' => 'TIẾP TỤC MUA HÀNG',
-        'proceed' => 'ĐẶT HÀNG',
+        'proceed' => 'TIẾN HÀNH ĐẶT HÀNG',
     ];
 ?>

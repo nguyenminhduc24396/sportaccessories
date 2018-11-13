@@ -42,10 +42,10 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $keyword = ucfirst($request->q);
-        $data['listPd'] = Product::where('namepd', 'LIKE', "%{$keyword}%")->orWhere('price', '<', "{$keyword}")->where('status', 1)->paginate(8);
+        $data['listPd'] = Product::where('namepd', 'LIKE', "%{$keyword}%")->orWhere('price', '<', "{$keyword}")->where('status', 1)->paginate(12);
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
         
-        return view('page.product.category', $data);
+        return view('page.product.search', $data);
     }
 }

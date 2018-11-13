@@ -87,12 +87,6 @@
                                                     <span class="price"></span>
                                                 </p>
                                             </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -133,12 +127,6 @@
                                                 	<span class="price-label">Regular Price: </span>
                                                     <span class="price">{{ number_format($val->price) }} VNĐ</span>
                                                 </p>
-                                            </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -182,12 +170,6 @@
                                                     <span class="price">{{ number_format($val->price) }} VNĐ</span>
                                                 </p>
                                             </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
-                                            </div>
                                         </div>
                                     </div>
                                     @elseif($val->sale == null)
@@ -218,12 +200,6 @@
                                                     <span class="price"></span>
                                                 </p>
                                             </div>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:67%"></div>
-                                                </div>
-                                                <span class="amount"><a href="#">3 Review(s)</a></span>
-                                            </div>
                                         </div>
                                     </div>
                                     @endif
@@ -232,10 +208,9 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- /.col-right -->
+                </div>
             </div>
-        </div><!-- /.main -->
-    
+        </div>
         <div class="brands">
             <div class="title-group1">
                 <h2>@lang('layout.brand')</h2>
@@ -273,10 +248,10 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- /#brands -->
-        </div><!-- /.brands -->
+            </div>
+        </div>
     </div>
-<script type="text/javascript" charset="utf-8">
-    document.getElementById("menu-layout").style.display = "contents";
-</script>
+    <script type="text/javascript" charset="utf-8">
+        document.getElementById("menu-layout").style.display = "contents";
+    </script>
 @endsection

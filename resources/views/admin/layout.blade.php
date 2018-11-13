@@ -85,7 +85,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="{{ route('admin.report') }}">
         <i class="fas fa-fw fa-file-invoice-dollar"></i>
         <span>Báo cáo</span>
     </a>

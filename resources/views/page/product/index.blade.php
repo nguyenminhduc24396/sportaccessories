@@ -27,9 +27,6 @@
                                 <div class="product-name">
                                     <h1>{{ $info->namepd }}</h1>
                                 </div>
-                                <div class="ratings">
-                                    <span class="amount"><a href="#">1 Review(s)</a></span>
-                                </div>
                                 <div class="box-container2"> 
                                     <div class="price-box">
                                         <p class="special-price">
@@ -51,75 +48,14 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="product-tab tab-custom">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#product-review" data-toggle="tab">Phản hồi của khách hàng</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="product-review">...</div>
-                                <div class="title-group3">
-                            <h3>Comments (3)</h3>
-                        </div>
                         <div class="comment-list">
                             <div class="comment-item">
                                 <div class="media">
                                     <div class="media-body">
-                                        <div class="comment-date">12.5/2104</div>
-                                        <div class="comment-title">Section 1.10.33 of "de Finibus Bonorum et Malorum"</div>
-                                        Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. 
-                                    </div>
-                                </div>
-                                <div class="comment-reply">
-                                    <div class="media">
-                                        <div class="media-body">
-                                            <div class="comment-date">12.5/2104</div>
-                                            <div class="comment-title">1914 translation by H. Rackham</div>
-                                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. 
-                                        </div>
+                                        <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="10" data-width="870"></div>
                                     </div>
                                 </div>
                             </div><!-- /.commnent-item -->
-                            <div class="comment-item">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <div class="comment-date">12.5/2104</div>
-                                        <div class="comment-title">Section 1.10.33 of "de Finibus Bonorum et Malorum"</div>
-                                        Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="title-group3">
-                            <h3>Leave a reply</h3>
-                        </div>
-                        <form>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Subject">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your comment" rows="5"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-default btn-lg">SUBMIT COMMENT</button>
-                        </form>
-                        <br>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,4 +131,13 @@
             </div>
         </div>
     </div>
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=289973708510931&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 @endsection

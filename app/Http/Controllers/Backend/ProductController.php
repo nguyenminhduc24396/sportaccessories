@@ -66,7 +66,7 @@ class ProductController extends Controller
             ];
         }
         if (DB::table('products')->insert($dataInsert)) {
-            return redirect()->route('admin.product');
+            return redirect()->route('admin.product')->with('success', "Thêm sản phẩm mới thành công");
         } else {
             return redirect()->route('admin.product.add', ['state'=>'err']);
         }
@@ -124,9 +124,9 @@ class ProductController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
         }
-        if (isset($infoPd->id)&& $infoPd->id>0) {
+        if (isset($infoPd->id) && $infoPd->id > 0) {
             if (DB::table('products')->where('id', $id)->update($dataUpdate)) {
-                return redirect()->route('admin.product');
+                return redirect()->route('admin.product')->with('success', "Cập nhật sản phẩm thành công");
             } else {
                 return redirect()->route('admin.product.detail', ['state'=>'err']);
             }

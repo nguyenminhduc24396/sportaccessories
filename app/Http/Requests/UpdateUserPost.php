@@ -25,7 +25,6 @@ class UpdateUserPost extends FormRequest
     {
         return [
             'email' => 'required|email|unique:users,email,'.request()->id,
-            'password' => 'min:6',
             'name' => 'required|min:2|max:60',
             'phone' => 'required|min:10|max:11',
             'address' => 'required|min:3',
@@ -36,7 +35,6 @@ class UpdateUserPost extends FormRequest
             'email.required' => 'Email không được trống',
             'email.email' => 'Email phải là dạng email',
             'email.unique' => 'Email đã tồn tại',
-            'password.min' => 'Mật khẩu không được nhỏ hơn :min ký tự',
             'name.required' => 'Tên không được trống',
             'name.min' => 'Tên không được nhỏ hơn :min ký tự',
             'name.max' => 'Tên không được lớn hơn :max ký tự',

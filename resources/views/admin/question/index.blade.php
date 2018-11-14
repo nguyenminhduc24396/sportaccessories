@@ -5,8 +5,13 @@
     <div class="col-lg-12">
         <h3 class="text-center">Câu hỏi thường gặp</h3>
     </div>
-</div>
-<div class="row">
+    <div class="col-lg-12">
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
     <div class="col-md-12">
         {!! Form::open(['route' => 'admin.question.add']) !!}
             <div class="row">
@@ -22,8 +27,6 @@
             </div>
         {!! Form::close() !!}
     </div>
-</div>
-<div class="row">
     <div class="col-lg-12 mt-3">
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
@@ -48,7 +51,6 @@
             </tbody>
         </table>
     </div>
-</div>
 <script type="text/javascript">
     function deleteQ(id)
     {

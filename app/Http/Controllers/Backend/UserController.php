@@ -45,7 +45,7 @@ class UserController extends Controller
         $data['role'] = 0;
         $result = User::insert($data);
         if ($result) {
-            return redirect()->route('admin.user');
+            return redirect()->route('admin.user')->with('success', "Thêm tài khoản quản lý thành công");
         } else {
             return redirect()->route('admin.user.edit', ['state'=>'err']);
         }
@@ -70,7 +70,7 @@ class UserController extends Controller
         $data['updated_at'] = date('Y-m-d H:i:s');
         $result = User::find($id)->update($data);
         if ($result) {
-            return redirect()->route('admin.user');
+            return redirect()->route('admin.user')->with('success', "Cập nhật tài khoản thành công");
         } else {
             return redirect()->route('admin.user.edit', ['state'=>'err']);
         }

@@ -38,8 +38,8 @@
                     {!! Form::select('shipping_id', $shipping->pluck('type', 'id'), $info->shipping_id, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('payment_id', 'Phương thức thanh toán') !!}
-                    {!! Form::select('payment_id', $payment->pluck('name', 'id'), $info->payment_id, ['class' => 'form-control']) !!}
+                    {!! Form::label('email', 'E-Mail') !!}
+                    {!! Form::text('email', $info->email, ['class' => 'form-control', 'required' => 'true']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('order_status_id', 'Trạng thái') !!}

@@ -29,8 +29,6 @@ Route::group(['namespace' => 'Page', 'prefix' => LaravelLocalization::setLocale(
     Route::get('addcart/{id}', 'CartController@add')->name('cart.add');
     Route::get('updatecart', 'CartController@update')->name('cart.update');
     Route::get('removecart/{id}', 'CartController@remove')->name('cart.remove');
-    // Route::get('checkout','CartController@checkout')->name('checkout');
-    // Route::post('handlecheckout', 'CartController@handleCheckout')->name('handlecheckout');
 
     Route::get('post', 'PostController@index')->name('post');
     Route::get('post/{slug?}/{id}', 'PostController@detail')->name('post.detail');

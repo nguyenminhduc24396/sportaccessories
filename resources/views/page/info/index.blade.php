@@ -22,6 +22,11 @@
                             </ul>
                         </div>
                     @endif
+                    @if (session('success'))
+                        <div class="alert alert-success text-center">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 </div>
             </div>
             {!! Form::open(['route' => 'info.update']) !!}

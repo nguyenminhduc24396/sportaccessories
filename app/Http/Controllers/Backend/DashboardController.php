@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $data['updated_at'] = date('Y-m-d H:i:s');
         $result = User::find($id)->update($data);
         if ($result) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->back()->with('success', 'Cập nhật thông tin tài khoản thành công');
         } else {
             return redirect()->route('admin.dashboard.edit', ['state'=>'err']);
         }
@@ -45,10 +45,8 @@ class DashboardController extends Controller
         $data = $request->except('_token');
         $result = Question::create($data);
         
-        return redirect()->route('admin.question');
+        return redirect()->route('admin.question')->with('success', "Thêm câu hỏi thường gặp thành công");
     }
-    public function updateQuestion(Request $request)
-    {}
     public function delete(Request $request)
     {
         $id = $request->id;

@@ -49,7 +49,7 @@ class OrderController extends Controller
         $data['updated_at'] = date('Y-m-d H:i:s');
         $result = Order::find($id)->update($data);
         if ($result) {
-            return redirect()->route('admin.order');
+            return redirect()->route('admin.order')->with('success', "Cập nhật thông tin đơn hàng thành công");
         } else {
             return redirect()->route('admin.order.edit', ['state'=>'err']);
         }

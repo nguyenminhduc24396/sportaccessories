@@ -24,7 +24,8 @@ class CategoryController extends Controller
     {
         $data = $request->except('_token');
         $result = Category::create($data);
-        return redirect()->route('admin.category');
+
+        return redirect()->route('admin.category')->with('success', 'Thêm danh mục mới thành công');
     }
     public function delete(Request $request)
     {
@@ -53,7 +54,7 @@ class CategoryController extends Controller
             } else {
                 Product::where('category_id', $id)->update(['status' => 1]);
             }
-            return redirect()->route('admin.category');
+            return redirect()->route('admin.category')->with('success', 'Cập nhật trạng thái thành công');
         } else {
             return redirect()->route('admin.category', ['state'=>'err']);
         }

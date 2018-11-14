@@ -4,6 +4,13 @@
     <div class="col-lg-12">
         <h3 class="text-center">Sản phẩm</h3>
     </div>
+    <div class="col-lg-12">
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
     <div class="col-lg-9">
         <div class="row">
             <div class="col-lg-6">

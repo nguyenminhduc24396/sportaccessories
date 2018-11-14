@@ -16,6 +16,7 @@ class PostController extends Controller
         $keyword = $request->keyword;
         $data['key'] = ucfirst($keyword);
         $data['listPost'] = Post::orderBy('status', 'ASC')->with(['user'])->where('title', 'LIKE', "%{$keyword}%")->orWhere('slug', 'LIKE', "%{$keyword}%")->paginate(5);
+        
         return view('admin.post.index', $data);
     }
     public function add()
@@ -55,7 +56,7 @@ class PostController extends Controller
             ];
         }
         if (DB::table('posts')->insert($dataInsert)) {
-            return redirect()->route('admin.post');
+            return redirect()->route('admin.post')->with('success', 'Thêm bài viết mới thành công');
         } else {
             return redirect()->route('admin.post.add', ['state'=>'err']);
         }
@@ -141,7 +142,7 @@ class PostController extends Controller
         }
         if (isset($infoPost->id) && $infoPost->id > 0) {
             if (DB::table('posts')->where('id', $id)->update($dataUpdate)) {
-                return redirect()->route('admin.post');
+                return redirect()->route('admin.post')->with('success', 'Cập nhật bài viết thành công');
             } else {
                 return redirect()->route('admin.post.detail', ['state'=>'err']);
             }

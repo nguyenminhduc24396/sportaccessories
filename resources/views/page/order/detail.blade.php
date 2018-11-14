@@ -37,7 +37,7 @@
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $val->namepd }}</td>
                                 <td><img src="{{ URL::to('/').'/uploads/images/'.$val->image }}" alt="" width="120" height="120"></td>
-                                <td>{{ number_format($val->price) }}</td>
+                                <td>{{ number_format($val->price) }} VNĐ</td>
                                 <td>{{ $val->qty }}</td>
                                 <td>{{ number_format($subTotal) }}</td>
                             </tr>
@@ -46,7 +46,7 @@
                         <tfoot>
                             <tr class="text-center">
                                 <td colspan="5">@lang('cart.total')</td>
-                                <td>{{ number_format($total) }}</td>
+                                <td>{{ number_format($total) }} VNĐ</td>
                             </tr>
                         </tfoot>
                     </table>

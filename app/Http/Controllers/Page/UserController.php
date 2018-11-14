@@ -16,6 +16,7 @@ class UserController extends Controller
     {
         $data['cart'] = \Cart::getContent();
         $data['categories'] = Category::where('status', 1)->get();
+
         return view('page.info.index', $data);
     }
     public function update(UpdateUserPost $request)
@@ -29,7 +30,7 @@ class UserController extends Controller
         $data['updated_at'] = date('Y-m-d H:i:s');
         $result = User::find($id)->update($data);
         if ($result) {
-            return redirect()->route('home');
+            return redirect()->back()->with('success', 'Cập nhật thông tin thành công');
         } else {
             return redirect()->route('info', ['state'=>'error']);
         }

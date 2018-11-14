@@ -4,6 +4,13 @@
     <div class="col-md-12">
         <h3 class="text-center">Tài khoản</h3>
     </div>
+    <div class="col-md-12">
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-2">

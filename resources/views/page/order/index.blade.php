@@ -32,7 +32,7 @@
                                 <td><a style="color: red; font-weight: bold;" href="{{ route('order.detail', ['id' => $val->id]) }}">{{ $key+1 }}</a></td>
                                 <td>{{ $val->name }}</td>
                                 <td>{{ $val->address }}</td>
-                                <td>{{ number_format($val->total_price) }}</td>
+                                <td>{{ number_format($val->total_price) }} VNĐ</td>
                                 <td>{{ $val->order_status->description }}</td>
                                 <td>{{ \Carbon\Carbon::parse($val->created_at)->format('H:i:s d-m-Y') }}</td>
                                 <td>{{ ($val->ship_date != null ) ? \Carbon\Carbon::parse($val->ship_date)->format('H:i:s d-m-Y') : '' }}</td>

@@ -4,6 +4,13 @@
     <div class="col-lg-12">
         <h3 class="text-center">Bài viết</h3>
     </div>
+    <div class="col-lg-12">
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
     <div class="col-lg-9">
         <div class="row">
             <div class="col-lg-6">
@@ -15,9 +22,9 @@
         </div>
     </div>
     @if(Auth::user()->role == 0)
-    <div class="col-lg-3">
-        <a href="{{ route('admin.post.add') }}" title="Add Product" class="btn btn-primary float-right">Thêm bài viết</a>
-    </div>
+        <div class="col-lg-3">
+            <a href="{{ route('admin.post.add') }}" title="Add Product" class="btn btn-primary float-right">Thêm bài viết</a>
+        </div>
     @endif
     <div class="col-lg-12 mt-3">
         <table class="table table-striped table-bordered">

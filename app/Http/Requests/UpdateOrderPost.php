@@ -26,7 +26,6 @@ class UpdateOrderPost extends FormRequest
         return [
             'address' => 'required|min:2|max:60',
             'shipping_id' => 'required|numeric',
-            'payment_id' => 'required|numeric',
             'order_status_id' => 'required|numeric',
         ];
     }
@@ -37,7 +36,6 @@ class UpdateOrderPost extends FormRequest
             'address.min' => 'Địa chỉ không được nhỏ hơn :min ký tự',
             'address.max' => 'Địa chỉ không được lớn hơn :max ký tự',
             'shipping_id.numeric' => 'vui lòng chọn hình thức giao hàng',
-            'payment_id.numeric' => 'vui lòng chọn phương thức thanh toán',
             'order_status_id.numeric' => 'vui lòng chọn trạng thái',
         ];
     }

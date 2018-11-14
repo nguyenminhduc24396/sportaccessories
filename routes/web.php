@@ -56,7 +56,7 @@ Route::get('switch-language/{lang}', function ($lang = null) {
         return Redirect::to($url);
 })->name('language');
 
-Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => ['checkLogin', 'verified']], function () {
+Route::group(['namespace' => 'Backend', 'as' => 'admin.', 'prefix' => '/admin', 'middleware' => ['checkLogin']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::post('update', 'DashboardController@update')->name('update');
     Route::get('question', 'DashboardController@question')->name('question');

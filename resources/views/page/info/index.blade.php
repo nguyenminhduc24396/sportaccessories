@@ -9,21 +9,21 @@
             </ul>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-    </div>
     <div class="main">
         <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+            </div>
             {!! Form::open(['route' => 'info.update']) !!}
             <div class="col-sm-6">
                 <h4>Thông tin cá nhân</h4>

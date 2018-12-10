@@ -5,7 +5,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="{{ route('home') }}">@lang('layout.home')</a></li>
-                <li class="active">@lang('layout.category')</li>
+                <li class="active">@lang('layout.search2')</li>
             </ul>
         </div>
     </div>

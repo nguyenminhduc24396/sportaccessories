@@ -57,5 +57,6 @@
         'sharepost' => 'Chia sẻ bài viết này',
         'create' => 'Ngày đặt hàng',
         'done' => 'Ngày nhận hàng',
+        'search2' => 'Tìm kiếm',
     ];
 ?>

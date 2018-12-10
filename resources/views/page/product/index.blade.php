@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-sm-3 col-left">
                     <div class="block">
-                        <div class="title-group"><h2>@lang('other')</h2></div>
+                        <div class="title-group"><h2>@lang('layout.other')</h2></div>
                         <div id="special-offer" class="owl-container">
                             <div class="owl">
                                 <div class='sepecialoffer-item item'>

@@ -57,5 +57,6 @@
         'sharepost' => 'Share this post',
         'create' => 'Ordered Date',
         'done' => 'Received Date',
+        'search2' => 'Search',
     ];
 ?>
